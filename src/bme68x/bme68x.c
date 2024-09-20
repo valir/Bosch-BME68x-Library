@@ -38,6 +38,10 @@
 
 #include "bme68x.h"
 #include <stdio.h>
+#include <esp_log.h>
+
+
+static const char* TAG = "bme68x";
 
 /* This internal API is used to read the calibration coefficients */
 static int8_t get_calib_data(struct bme68x_dev *dev);
@@ -168,6 +172,7 @@ int8_t bme68x_init(struct bme68x_dev *dev)
         }
     }
 
+    ESP_LOGI(TAG, "reslt = %d", rslt);
     return rslt;
 }
 
