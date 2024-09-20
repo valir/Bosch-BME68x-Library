@@ -1,4 +1,5 @@
 
+if(CONFIG_USE_SENSOR_BME680)
 idf_component_register(
   SRCS
     src/bme68xLibrary.cpp
@@ -7,3 +8,4 @@ idf_component_register(
     src/bme68x
     src
   REQUIRES arduino)
+endif()
